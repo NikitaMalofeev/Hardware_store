@@ -1,6 +1,26 @@
-$orange_maket:#E89F71;
+//цвета 
+$orange_color: #E89F71;
+$grey_color: #898989;
+$dark_grey_color: #616161;
+$pink_main: #F9F1E7;
+$pink_light: #FCF8F3;
+$font_color_main: #3A3A3A;
 
+$maxWidth: 1440px;
+$maxWidthContainer: 1270px;
+$fontFamily: "Gilroy";
 
+//медиазапросы
+$mq1: 991.98px;
+$mq2: 767.98px;
+$mq3: 469.98px;
+
+//шрифты
+$gil_400: "Gilroy regular";
+$gil_700: "Gilroy bold";
+$gil_600: "Gilroy SemiBold";
+$gil_600: "Gilroy Medium";
+//Подключение шрифта
 @mixin font($font_name, $file_name, $weight, $style) {
 	@font-face {
 		font-family: $font_name;
@@ -9,4 +29,10 @@ $orange_maket:#E89F71;
 		font-weight: #{$weight};
 		font-style: #{$style};
 	}
+}
+
+.__container {
+	max-width: $maxWidthContainer;
+	padding: 0 15px;
+	margin: 0 auto;
 }

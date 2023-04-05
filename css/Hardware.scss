@@ -1,0 +1,57 @@
+@import "../css/mixins_variable.scss";
+@import "../css/fonts.scss";
+@import "../css/null.scss";
+
+.body {
+    min-width: $maxWidth;
+    width: 100%;
+}
+
+.header {
+
+    &__wrapper {
+    }
+
+    &__container {
+        max-width: $maxWidth;
+        width: 100%;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+
+    &__main {
+    }
+
+    &__logo {
+    }
+
+    &__menu {
+    }
+
+    &__search {
+    }
+
+    &__actions {
+    }
+}
+
+.menu {
+
+    &__body {
+    }
+
+    &__list {
+    }
+
+    &__item {
+    }
+
+    &__link {
+    }
+}
+.actions-header {
+}
+.menu-burger {
+    display: none;
+}
+

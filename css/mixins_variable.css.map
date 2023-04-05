@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"mixins_variable.css"}
+{"version":3,"sources":["mixins_variable.scss","mixins_variable.css"],"names":[],"mappings":"AAiCA;EACC,iBAzBmB;EA0BnB,eAAA;EACA,cAAA;AChCD","file":"mixins_variable.css"}

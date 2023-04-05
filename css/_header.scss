@@ -1,0 +1,65 @@
+.body {
+    min-width: $maxWidth;
+    width: 100%;
+}
+.header {
+
+		&__wrapper {
+		}
+
+		&__container {
+            max-width: $maxWidth;
+            width: 100%;
+            padding: 0 15px;
+            margin: 0 auto;
+		}
+
+		&__main {
+		}
+
+		&__logo {
+		}
+
+		&__menu {
+		}
+
+		&__search {
+		}
+
+		&__actions {
+		}
+}
+.container {
+}
+.menu {
+
+		&__body {
+		}
+
+		&__list {
+		}
+
+		&__item {
+		}
+
+		&__link {
+		}
+
+		&__arrow {
+		}
+
+		&__sub-list {
+            display: none;
+		}
+
+		&__sub-item {
+		}
+
+		&__sub-link {
+		}
+}
+.actions-header {
+}
+.menu-burger {
+    display: none;
+}
