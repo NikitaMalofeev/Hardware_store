@@ -1,0 +1,13 @@
+@import "../css/mixins_variable.scss";
+@import "../css/fonts.scss";
+
+
+.body{
+    background-color: $orange_maket;
+}
+
+.block  {
+    color: red;
+    height: 100px;
+    width: 100px;
+}
