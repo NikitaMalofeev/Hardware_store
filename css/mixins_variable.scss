@@ -15,11 +15,11 @@ $mq1: 991.98px;
 $mq2: 767.98px;
 $mq3: 469.98px;
 
-//шрифты
-$gil_400: "Gilroy regular";
-$gil_700: "Gilroy bold";
-$gil_600: "Gilroy SemiBold";
-$gil_600: "Gilroy Medium";
+//Размер шрифтов
+$gil_400: 400;
+$gil_700: 700;
+$gil_600: 600;
+$gil_500: 500;
 //Подключение шрифта
 @mixin font($font_name, $file_name, $weight, $style) {
 	@font-face {

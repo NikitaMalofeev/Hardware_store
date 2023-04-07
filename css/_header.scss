@@ -1,61 +1,189 @@
 .body {
     min-width: $maxWidth;
     width: 100%;
+	font-family: "Gilroy", sans-serif;
 }
 .header {
+		position: absolute;
+		top: 0;
+		left: 0;
 
 		&__wrapper {
+			position: fixed;
+			width: 100%;
+			background: linear-gradient(to right, $pink_main 82%, white 8%,);
+			top: 0;
+			left: 0;
+			z-index: 50;
+			
 		}
 
 		&__container {
-            max-width: $maxWidth;
+			display: flex;
+			align-items: center;
+            max-width: $maxWidthContainer;
             width: 100%;
             padding: 0 15px;
             margin: 0 auto;
+			background: linear-gradient(to right, $pink_main 61%, $pink_light 39%,);
 		}
 
 		&__main {
+			display: flex;
+			margin: auto 0;
+			flex: 0 0 494/1240 * 100%;
+			min-height: 125px;
+			align-items: center;
 		}
 
 		&__logo {
-		}
-
-		&__menu {
+			color: #000000;
+			line-height: 29px;
+			font-weight: $gil_700;
+			font-size: 29 / 24 * 100%;
+			margin-right: 36px;
 		}
 
 		&__search {
+			height: 37%;
+			width: 448px;
+			background-color: white;
+			margin-right: 114px;
+
+			& .search__form-icon {
+				display: none;
+			}
+			
+			& .search__form-item input {
+				font-size: 14px;
+				line-height: 150%;
+				margin-top: 14px;
+			}
+			& .search__icon {
+				width: 19px;
+				height: 19px;
+				margin: 14px;
+			}
 		}
 
 		&__actions {
+			display: flex;
+			align-items: center;
+			
+			& .actions-heart {
+				width: 24px;
+				height: 24px;
+				margin-right: 32px;
+			}
+
+			& .actions-cart {
+				width: 24px;
+				height: 24px;
+				margin-right: 32px;
+			}
+
+			& .actions-avatar {
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+			}
 		}
 }
 .container {
 }
 .menu {
-
+		flex: 0 1 420px;
 		&__body {
+			display: flex;
+
 		}
 
 		&__list {
+			@media (min-width: $mq3) {
+			display: flex;
+			justify-content: space-evenly;
+			margin-right: 11px;
+			flex-wrap: wrap;
+			}
 		}
 
 		&__item {
+			font-weight: $gil_500;
+			margin-right: 36px;
+			flex-wrap: wrap;
+			padding: 5px 0;
+			position: relative;
+
+			@media (any-hover: hover) {
+				&:hover {
+					.menu__sub-list {
+						transform: translate(0px, 0px);
+						opacity: 1;
+						visibility: visible;
+						pointer-events: auto;
+					}
+					.menu__arrow-icon {
+						transform: rotate(-180deg);
+						transition: all 0.4s ease 0s;
+					}
+					.menu__arrow, .menu__link {
+						color: $orange_color;
+					}
+				}
+			}
 		}
 
 		&__link {
+			color: inherit;
+			line-height: 1.5em;
+			font-size: 16px;
+			font-weight: $gil_500;
+			margin-right: 12px;
+			transition: color 0.3s ease 0s;
+			
 		}
 
 		&__arrow {
+			margin: 0 0 0 8px;
+			transition: all 0.3s ease 0s;
+			& .menu__arrow-icon {
+				margin-top: 5px;
+			}
 		}
 
 		&__sub-list {
-            display: none;
+			position: relative;
+			left: 0;
+			background-color: $orange_color;
+			flex: 1 1 100%;
+
+			@media (min-width: $mq3) {
+				opacity: 0;
+				visibility: hidden;
+				border: 1px solid black;
+				transition: all 0.3s ease 0s;
+				transform: translate(0px, 10px);
+				border-radius: 5px;
+				min-width: 200px;
+				min-height: 150px;
+				position: absolute;
+				left: 0;
+				top: 100%;
+				pointer-events: none;
+			}
 		}
 
 		&__sub-item {
+			margin: 2px 0 8px 5px;
+
+			&:not(:last-child) {
+				margin: 0 0 px 0;
+			}
 		}
 
 		&__sub-link {
+			color: white;
+			line-height: 120%;
 		}
 }
 .actions-header {

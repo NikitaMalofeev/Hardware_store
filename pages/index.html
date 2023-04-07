@@ -18,37 +18,37 @@
                             <ul class="menu__list">
                                 <li class="menu__item">
                                     <a href="" class="menu__link">Products</a>
-                                    <button data-spoiler type="button" class="menu__arrow"><img src="../" alt="icon-down"></button>
+                                    <button data-spoiler type="button" class="menu__arrow"><img src="../img/icons/arrow-down.svg" alt="icon-down" class="menu__arrow-icon"></button>
                                     <ul class="menu__sub-list">
                                         <li class="menu__sub-item">
-                                            <a href="" class="menu__sub-link"></a>
+                                            <a href="" class="menu__sub-link">Product #1</a>
                                         </li>
                                         <li class="menu__sub-item">
-                                            <a href="" class="menu__sub-link"></a>
+                                            <a href="" class="menu__sub-link">Product #2</a>
                                         </li>
                                         <li class="menu__sub-item">
-                                            <a href="" class="menu__sub-link"></a>
+                                            <a href="" class="menu__sub-link">Product #3</a>
                                         </li>
                                         <li class="menu__sub-item">
-                                            <a href="" class="menu__sub-link"></a>
+                                            <a href="" class="menu__sub-link">Product #4</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="menu__item">
                                     <a href="" class="menu__link">Rooms</a>
-                                    <button data-spoiler type="button" class="menu__arrow"><img src="../" alt="icon-down"></button>
+                                    <button data-spoiler type="button" class="menu__arrow"><img src="../img/icons/arrow-down.svg" alt="icon-down" class="menu__arrow-icon"></button>
                                     <ul class="menu__sub-list">
                                         <li class="menu__sub-item">
-                                            <a href="" class="menu__sub-link"></a>
+                                            <a href="" class="menu__sub-link">Room #1</a>
                                         </li>
                                         <li class="menu__sub-item">
-                                            <a href="" class="menu__sub-link"></a>
+                                            <a href="" class="menu__sub-link">Room #2</a>
                                         </li>
                                         <li class="menu__sub-item">
-                                            <a href="" class="menu__sub-link"></a>
+                                            <a href="" class="menu__sub-link">Room #3</a>
                                         </li>
                                         <li class="menu__sub-item">
-                                            <a href="" class="menu__sub-link"></a>
+                                            <a href="" class="menu__sub-link">Room #4</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -59,11 +59,30 @@
                         </nav>
                     </div>
                 </div>
-                <div class="header__search">
-    
+                <div class="header__search search">
+                    <button type="button" class="search__form-icon"><img src="../img/icons/search.svg" alt=""></button>
+                    <form class="search__form-item">
+                        <img src="../img/icons/search.svg" alt="search icon" class="search__icon">
+                        <input autocomplete="off" type="text" data-value="Search for minimalist chair" placeholder="Search for minimalist chair" class="search__form-input">
+                    </form>
                 </div>
                 <div class="header__actions actions-header">
-    
+                    <a href="#" class="actions-header__item actions-header__item_favorites">
+                        <img src="../img/icons/heart.svg" alt="heart icon" class="actions-heart">
+                    </a>
+                    <div class="actions-header__item cart-header">
+                        <a href="#" class="cart-header__icon">
+                            <img src="../img/icons/cart.svg" alt="cart icon" class="actions-cart">
+                        </a>
+                        <div class="cart-header__body">
+                            <ul class="cart-header__list cart-list">
+
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="#" class="actions-header__item actions-header__item_user">
+                        <img src="../img/avatar.jpg" alt="avatar" class="actions-avatar">
+                    </a>
                 </div>
                 <button type="button" class="header__menu menu-burger">
                     <span></span>
@@ -73,5 +92,7 @@
             </div>
         </div>
     </header>
+    <script src="../js/files/script.js"></script>
+    <script src="../js/files/functions.js"></script>
 </body>
 </html>
