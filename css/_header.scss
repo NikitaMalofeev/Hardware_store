@@ -1,6 +1,7 @@
 .body {
     min-width: $maxWidth;
     width: 100%;
+	overflow-x: hidden;
 	font-family: "Gilroy", sans-serif;
 }
 .header {
@@ -11,7 +12,7 @@
 		&__wrapper {
 			position: fixed;
 			width: 100%;
-			background: linear-gradient(to right, $pink_main 82%, white 8%,);
+			background: linear-gradient(90deg, $pink_main 61%, $pink_light 32%);
 			top: 0;
 			left: 0;
 			z-index: 50;
@@ -21,19 +22,34 @@
 		&__container {
 			display: flex;
 			align-items: center;
-            max-width: $maxWidthContainer;
+			position: relative;
+            max-width: $maxWidthContainer + px;
+			min-height: 125px;
             width: 100%;
             padding: 0 15px;
             margin: 0 auto;
-			background: linear-gradient(to right, $pink_main 61%, $pink_light 39%,);
+			
+			
+			@media (max-width: $mq2) {
+				min-height: 80px;
+			}
+
+			@media (max-width: $mq3) {
+				min-height: 50px;
+			}
+
 		}
 
 		&__main {
 			display: flex;
 			margin: auto 0;
 			flex: 0 0 494/1240 * 100%;
-			min-height: 125px;
 			align-items: center;
+			
+
+			@media (max-width: $mq2) {
+				flex: 1 1 auto;
+			}
 		}
 
 		&__logo {
@@ -42,60 +58,75 @@
 			font-weight: $gil_700;
 			font-size: 29 / 24 * 100%;
 			margin-right: 36px;
+			position: relative;
+			z-index: 5;
+			@media (max-width: $mq3) {
+				font-size: 36 / 24 * 100%;
+			}
 		}
 
 		&__search {
-			height: 37%;
-			width: 448px;
-			background-color: white;
-			margin-right: 114px;
 
-			& .search__form-icon {
-				display: none;
+			@media (min-width: $mq2) {
+				flex: 1 1 auto;
 			}
-			
-			& .search__form-item input {
-				font-size: 14px;
-				line-height: 150%;
-				margin-top: 14px;
-			}
-			& .search__icon {
-				width: 19px;
-				height: 19px;
-				margin: 14px;
-			}
+
+			max-width: 473px;
+
 		}
 
 		&__actions {
 			display: flex;
 			align-items: center;
+			padding-left: 20px;
+			@include adaptiv-value('margin-left', 40, 0, 1);
+			@media (max-width: $mq2) {
+				margin-left: 0;
+			}
 			
-			& .actions-heart {
-				width: 24px;
-				height: 24px;
-				margin-right: 32px;
-			}
 
-			& .actions-cart {
-				width: 24px;
-				height: 24px;
-				margin-right: 32px;
-			}
-
-			& .actions-avatar {
-				width: 40px;
-				height: 40px;
-				border-radius: 50%;
-			}
 		}
 }
 .container {
+
 }
+
 .menu {
 		flex: 0 1 420px;
 		&__body {
 			display: flex;
 
+			@media (max-width: $mq3) {
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				top: 0;
+				left: -100%;
+				background-color: #fcf8f3;
+				transition: left 0.4s ease 0s;
+				padding: 70px 15px 30px 15px;
+				&::before {
+					content: '';
+					position: fixed;
+					width: 100%;
+					height: 50px;
+					top: 0;
+					left: 0;
+					background-color: #fcf8f3;
+					transition: left 0.4s ease 0s;
+					z-index: 2;
+				}
+				&._active {
+					left: 0;
+					&::before {
+						left: 0;
+					}
+				}
+			}
+			&._open {
+				left: 0;
+			}
 		}
 
 		&__list {
@@ -103,14 +134,14 @@
 			display: flex;
 			justify-content: space-evenly;
 			margin-right: 11px;
-			flex-wrap: wrap;
+			
 			}
 		}
 
 		&__item {
 			font-weight: $gil_500;
 			margin-right: 36px;
-			flex-wrap: wrap;
+			min-width: 95px;
 			padding: 5px 0;
 			position: relative;
 
@@ -131,23 +162,48 @@
 					}
 				}
 			}
+			@media (min-width: $mq3) {
+				&._hover{
+					.menu__sub-list {
+						transform: translate(0px, 0px);
+						opacity: 1;
+						visibility: visible;
+						pointer-events: auto;
+					}
+					.menu__arrow-icon {
+						transform: rotate(-180deg);
+						transition: all 0.4s ease 0s;
+					}
+					.menu__arrow, .menu__link {
+						color: $orange_color;
+					}
+				}
+			}
 		}
 
 		&__link {
-			color: inherit;
+			color: $font_color_main;
 			line-height: 1.5em;
 			font-size: 16px;
 			font-weight: $gil_500;
 			margin-right: 12px;
 			transition: color 0.3s ease 0s;
-			
+			@media (max-width: $mq3) {
+				font-size: 24px;
+			}
+
 		}
 
 		&__arrow {
-			margin: 0 0 0 8px;
 			transition: all 0.3s ease 0s;
+
 			& .menu__arrow-icon {
 				margin-top: 5px;
+				@media (max-width: $mq3) {
+					margin-top: 0;
+					min-width: 14px;
+					min-height: 14px;
+				}
 			}
 		}
 
@@ -156,6 +212,7 @@
 			left: 0;
 			background-color: $orange_color;
 			flex: 1 1 100%;
+			padding: 15px 0 0 10px;
 
 			@media (min-width: $mq3) {
 				opacity: 0;
@@ -171,6 +228,20 @@
 				top: 100%;
 				pointer-events: none;
 			}
+			@media (max-width: $mq3) {
+				opacity: 0;
+				visibility: hidden;
+				border: 1px solid black;
+				transition: all 0.3s ease 0s;
+				transform: translate(0px, 10px);
+				border-radius: 5px;
+				min-width: 200px;
+				min-height: 150px;
+				position: absolute;
+				left: 120%;
+				top: 35%;
+				pointer-events: none;
+			}
 		}
 
 		&__sub-item {
@@ -184,10 +255,205 @@
 		&__sub-link {
 			color: white;
 			line-height: 120%;
+			@media (any-hover: hover) {
+				&:hover{
+					text-decoration: underline;
+				}
+			}
 		}
 }
+
+.search-form {
+	display: flex;
+	justify-content: end;
+	
+
+	&__item {
+		display: flex;
+		align-items: center;
+		background-color: rgba(255, 255, 255, 0.72);
+		@include adaptiv-value('min-height', 45, 30, 1);
+		width: 100%;
+
+		@media (max-width: $mq2) {
+			box-shadow: 0 0 5px rgba(212, 209, 205, 0.3);
+			position: absolute;
+			min-height: 45px;
+			left: 0;
+			top: -100%;
+			z-index: 6;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.4s ease 0s;
+		}
+
+		&._active {
+			opacity: 1;
+			top: 85%;
+			left: 5%;
+			width: 90vw;
+			visibility: visible;
+			
+		}
+	}
+
+	& input {
+		color: $dark_grey_color;
+		font-size: 14px;
+		line-height: 150%;
+		min-width: 80%;
+		padding-right: 20px;
+		
+	}
+
+	&__btn {
+		min-width: 30px;
+		min-height: 30px;
+	}
+
+	&__btn-hidden {
+		@media (max-width: $mq2) {
+			min-width: 24px;
+			min-height: 24px;
+			background-position: center;
+			background-image: url(../img/icons/search.svg);
+			background-repeat: no-repeat;
+		}
+	}
+}
+
 .actions-header {
+	
+	position: relative;
+	z-index: 5;
+	@include adaptiv-value('gap', 32, 15, 1);
+
+	& .actions-heart {
+		max-width: 24px;
+		max-height: 24px;
+		color: #262f56;
+		transition: all 0.5s ease 0s;
+		
+		@media (any-hover: hover) {
+			&:hover {
+			background-color: $orange_color;
+			border-radius: 35%;
+			}
+		}
+	}
+
+	& .actions-cart {
+		max-width: 24px;
+		max-height: 24px;
+	
+	}
+
+	& .actions-avatar {
+		overflow: hidden;
+		border-radius: 50%;
+		@include adaptiv-value('max-width', 40, 30, 1);
+		@include adaptiv-value('max-height', 40, 30, 1);
+	}
 }
-.menu-burger {
-    display: none;
+
+.cart-header {
+
+	&__icon {
+		transition: all 0.4s ease 0s;
+		position: relative;
+		display: block;
+
+		@media (any-hover: hover) {
+			&:hover {
+			background-color: $orange_color;
+			border-radius: 30%;
+			}
+		}
+
+		span {
+			position: absolute;
+			min-width: 15px;
+			min-height: 15px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			top: -10px;
+			right: -10px;
+			border-radius: 50%;
+			background-color: $orange_color;
+			color: white;
+			font-size: 11px;
+		}
+
+	}
+
+	&__body {
+	}
+
+	&__list {
+	}
 }
+
+.cart-list {
+}
+
+.menu-icon {
+	display: none;
+	margin-left: 12px;
+	position: relative;
+	@media (max-width: $mq3){
+		z-index: 6;
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 20px;
+		cursor: pointer;
+
+		&::before,
+		&::after {
+			content: '';
+		}
+		&::before {
+			top: 0;
+			left: 0;
+			position: absolute;
+			min-height: 4px;
+			min-width: 100%;
+			transition: all 0.3s ease 0s;
+			background-color: $font_color_main;
+		}
+		&::after {
+			bottom: 0;
+			left: 0;
+			position: absolute;
+			min-height: 4px;
+			min-width: 100%;
+			transition: all 0.3s ease 0s;
+			background-color: $font_color_main;
+		}
+		& span {
+			left: 0;
+			position: absolute;
+			min-height: 4px;
+			min-width: 100%;
+			transition: all 0.3s ease 0s;
+			background-color: $font_color_main;
+			top: 50%;
+			transform: scale(1) translate(0px, -50%);
+		}
+		&._open span {
+			display: none;
+		}
+		&._open::before{
+			bottom: 75%;
+			transform: rotate(45deg) translate(7px, 50%);
+		} 
+		&._open::after{
+			top: 75%;
+			transform: rotate(-45deg) translate(9px, -50%);
+		}
+	}
+	
+}
+
+

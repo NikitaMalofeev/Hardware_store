@@ -1,0 +1,248 @@
+._footer-title {
+    display: flex;
+    align-items: flex-start;
+    color: $font_color_main;
+    @include adaptiv-value('font-size', 24, 20, 1);
+    line-height: 29 / 24 * 100%;
+    font-weight: $gil_700;
+}
+
+.footer {
+
+    &__wrapper{
+        max-width: 100vw;
+    }
+
+    &__container {
+        max-width: $maxWidthContainer +px;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+
+    &__body {
+        border-top: 1px solid #d8d8d8;
+        display: grid;
+        grid-template-columns: 250px 1fr 290px;
+        @include adaptiv-value('padding-top', 80, 30, 1);
+        @include adaptiv-value('padding-bottom', 60, 30, 1);
+        @include adaptiv-value('column-gap', 80, 0, 1);
+        @media (max-width: $mq1){
+            grid-template-rows: auto auto;
+            grid-template-columns: 1fr 290px;
+        }
+        @media (max-width: $mq2){
+            display: block;
+        }
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        @media (max-width: $mq1){
+            grid-column: span 2;
+            @include adaptiv-value("margin-bottom", 40, 30, 1)
+        }
+    }
+
+    &__logo {
+        margin-bottom: 16px/24px * 1em;
+    }
+
+    &__text {
+        color: $grey_color;
+        line-height: 150%;
+        &:not(:last-child){
+            margin-bottom: 1em;
+        }
+    }
+
+    &__contacts {
+    }
+
+    &__menu {
+        @media (max-width: $mq2) {
+            @include adaptiv-value("margin-bottom", 40, 30, 1)
+        }
+    }
+
+    &__subscribe {
+    }
+}
+
+.contacts-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.contacts {
+
+    &__footer-location {
+        display: inline-flex;
+        align-items: flex-start;
+        color: $grey_color;
+        transition: all 0.4s ease 0s;
+        @include adaptiv-value('margin-bottom', 16, 10, 1);
+        
+        & a{
+            color: $grey_color;
+            line-height: 150%;
+            margin-left: 10px;
+            @media (any-hover: hover){
+                &:hover{
+                    color: $orange_color;
+                }
+            }
+        }
+    }
+
+    &__footer-phone {
+        display: inline-flex;
+        align-items: flex-start;
+        color: $grey_color;
+        transition: all 0.4s ease 0s;
+        @include adaptiv-value('margin-bottom', 16, 10, 1);
+        & a{
+            color: $grey_color;
+            line-height: 150%;
+            margin-left: 10px;
+            @media (any-hover: hover){
+                &:hover{
+                    color: $orange_color;
+                }
+            }
+        }
+        
+    }
+
+    &__footer-email {
+        display: inline-flex;
+        align-items: flex-start;
+        transition: all 0.4s ease 0s;
+        & a{
+            color: $grey_color;
+            line-height: 150%;
+            @media (any-hover: hover){
+                &:hover{
+                    color: $orange_color;
+                }
+            }
+        }
+    }
+}
+.menu-footer {
+    @media (min-width: $mq3) {
+        display: flex;
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+        @media (min-width: $mq3) {
+            display: flex;
+            flex: 0 1 33.333%;
+        }
+    }
+
+    &__title {
+        cursor: default;
+        margin-bottom: 15px/24px *1em;
+        white-space: nowrap;
+        position: relative;
+        transition: all 0.4s ease 0s;
+        @media (max-width: $mq3){
+            cursor: pointer;
+            &::after {
+                content: '‹';
+                position: absolute;
+                top: -3px;
+                left: 200px;
+                @include adaptiv-value('font-size', 45, 30, 1);
+                transition: all 0.4s ease 0s;
+                transform: rotate(-90deg);
+            }
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $orange_color;
+                }
+            }
+        }
+        &._open {
+            &::after{
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    &__list {
+        transition: all 0.4s ease 0s;
+        li {
+            &:not(:last-child){
+                margin-bottom: 15px;
+            }
+        }
+        @media (max-width: $mq3){
+            opacity: 0;
+            visibility: hidden;
+            transform: translate(100%, 0px);
+            position: absolute;
+            & li {
+                &:last-child{
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        &._open{
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.4s ease 0s;
+            transform: translate(0px, 0px);
+            position: relative;
+        }
+    }
+
+    &__link {
+        color: $dark_grey_color;
+        transition: all 0.4s ease 0s;
+        line-height: 120%;
+        font-weight: $gil_500;
+        @media (any-hover: hover){
+            &:hover{
+                color: $orange_color;
+            }
+        }
+    }
+}
+.subscribe {
+
+    &__title {
+        margin-bottom: 15px/24px *1em;
+    }
+
+    &__form {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    &__button {
+        justify-content: flex-end;
+        flex: 0 0 45px;
+        height: 45px;
+        background-color: $orange_color;
+        transition: all 0.4s ease 0s;
+        @media (any-hover: hover){
+            &:hover{
+                background-color: #be825c;
+            }
+        }
+    }
+
+    &__input{
+        padding: 0 12px;
+        flex: 1 1 auto;
+        background-color: #F4F5F7;
+    }
+}

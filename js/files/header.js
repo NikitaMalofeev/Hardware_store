@@ -1,11 +1,11 @@
 
-
 window.onload = function () {
 	document.addEventListener("click", headerActions);
-	document.addEventLestener('click', footerActions);
 
+	// Actions (делегирование события click)
 	function headerActions(elem) {
 		const targetElement = elem.target;
+		console.log(targetElement)
 
 		if (window.innerWidth > 768 && isMobile.any()) {
 			if (targetElement.classList.contains('menu__arrow-icon')) {
@@ -17,6 +17,7 @@ window.onload = function () {
     	}
 
 		if (targetElement.classList.contains('search-form__btn-hidden')) {
+			console.log('пиздец не работает');
 			document.querySelector('.search-form__item').classList.toggle('_active')
 		} else if (!targetElement.closest('.search-form__item') && document.querySelector('.search-form__item._active')) {
 			document.querySelector('.search-form__item').classList.remove('_active')
@@ -32,27 +33,8 @@ window.onload = function () {
 				burgerMenu.classList.toggle('_open')
 			})
 		}
-
-		if (footerTargetElement.classList.contains('_title1')) {
-			document.querySelector('._list1').classList.toggle('_open')
-			document.querySelector('._title1').classList.toggle('_open')
-		}
-		if (footerTargetElement.classList.contains('_title2')) {
-			document.querySelector('._list2').classList.toggle('_open')
-			document.querySelector('._title2').classList.toggle('_open')
-		}
-		if (footerTargetElement.classList.contains('_title3')) {
-			document.querySelector('._list3').classList.toggle('_open')
-			document.querySelector('._title3').classList.toggle('_open')
-		}
 		
 	}
-}
-
-function footerActions (elem) {
-	const footerTargetElement = elem.target;
-
-	
 }
 
 

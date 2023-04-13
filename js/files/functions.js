@@ -4,3 +4,10 @@ var isMobile = { Android: function () { return navigator.userAgent.match(/Androi
 if (isMobile.any()) {
 	document.querySelector('html').classList.add('_touch');
 }
+
+function _removeClasses(el, class_name) {
+	for (var i = 0; i < el.length; i++) {
+		el[i].classList.remove(class_name);
+	}
+}
+

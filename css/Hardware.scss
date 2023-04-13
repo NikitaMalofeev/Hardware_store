@@ -2,57 +2,31 @@
 @import "../css/fonts.scss";
 @import "../css/null.scss";
 @import "../css/header";
+@import "../css/footer";
+@import "../css/main.scss";
+
 
 .body {
     min-width: $maxWidth;
     width: 100%;
 }
 
+.wrapper {
+    position: relative;
+    min-height: 100%;
+}
+
 .header {
 
-    &__wrapper {
-    }
-
-    &__container {
-        max-width: $maxWidth;
-        width: 100%;
-        padding: 0 15px;
-        margin: 0 auto;
-    }
-
-    &__main {
-    }
-
-    &__logo {
-    }
-
-    &__menu {
-    }
-
-    &__search {
-    }
-
-    &__actions {
-    }
 }
 
-.menu {
-
-    &__body {
-    }
-
-    &__list {
-    }
-
-    &__item {
-    }
-
-    &__link {
-    }
-}
-.actions-header {
-}
-.menu-burger {
-    display: none;
+.main {
+    flex: 1 1 auto;
 }
 
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
