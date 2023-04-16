@@ -151,4 +151,39 @@
 }
 .slider-main__image img {
   max-width: 100%;
+}
+.slider-arrows {
+  display: grid;
+  grid-template-columns: repeat(2, 48px);
+  gap: 8px;
+}
+
+.slider-arrow {
+  border-radius: 50%;
+  height: 48px;
+  background-color: rgba(252, 159, 113, 0.3);
+  transition: all 0.4s ease 0s;
+}
+.slider-arrow_prev {
+  cursor: pointer;
+}
+.slider-arrow_prev img {
+  transform: rotate(180deg);
+}
+@media (any-hover: hover) {
+  .slider-arrow_prev:hover {
+    background-color: rgba(252, 159, 113, 0.3);
+  }
+}
+.slider-arrow_prev::before {
+  color: red;
+  font-size: 20px;
+}
+.slider-arrow_next {
+  cursor: pointer;
+  width: 200px;
+}
+.slider-arrow_next::before {
+  color: red;
+  font-size: 20px;
 }/*# sourceMappingURL=main.css.map */

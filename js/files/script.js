@@ -1,8 +1,5 @@
-
-
-window.onload = function () {
-	document.addEventListener("click", headerActions);
-	document.addEventLestener('click', footerActions);
+window.addEventListener('load',function() {
+    document.addEventListener("click", headerActions);
 
 	function headerActions(elem) {
 		const targetElement = elem.target;
@@ -33,26 +30,34 @@ window.onload = function () {
 			})
 		}
 
-		if (footerTargetElement.classList.contains('_title1')) {
+		
+		
+	}
+});
+
+window.addEventListener('load',function() {
+    document.addEventListener("click", footerActions);
+	
+	function footerActions(elem) {
+		const targetElement = elem.target;
+
+		// как лучше было реализовать эту логику?
+		if (targetElement.classList.contains('_title1')) {
 			document.querySelector('._list1').classList.toggle('_open')
 			document.querySelector('._title1').classList.toggle('_open')
 		}
-		if (footerTargetElement.classList.contains('_title2')) {
+		if (targetElement.classList.contains('_title2')) {
 			document.querySelector('._list2').classList.toggle('_open')
 			document.querySelector('._title2').classList.toggle('_open')
 		}
-		if (footerTargetElement.classList.contains('_title3')) {
+		if (targetElement.classList.contains('_title3')) {
 			document.querySelector('._list3').classList.toggle('_open')
 			document.querySelector('._title3').classList.toggle('_open')
 		}
-		
 	}
-}
+});
 
-function footerActions (elem) {
-	const footerTargetElement = elem.target;
 
-	
-}
+
 
 

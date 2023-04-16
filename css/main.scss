@@ -166,13 +166,39 @@
 		}
 }
 .slider-arrows {
+	display: grid;
+  	grid-template-columns: repeat(2, 48px);
+  	gap: 8px;
 }
 .slider-arrow {
+		border-radius: 50%;
+		height: 48px;
+		background-color: rgba(252, 159, 113, 0.3);
+		transition: all 0.4s ease 0s;
 
 		&_prev {
+			cursor: pointer;
+			& img {
+				transform: rotate(180deg);
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: rgba(252, 159, 113, 0.3)
+				}
+			}
+			&::before {
+				color: red;
+				font-size: 20px;
+			}
 		}
 
 		&_next {
+			cursor: pointer;
+
+			&::before {
+				color: red;
+				font-size: 20px;
+			}
 		}
 }
 .swiper-wrapper {
