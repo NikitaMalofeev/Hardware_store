@@ -1,17 +1,16 @@
 @font-face {
   font-family: 'iconsPack';
-  src:  url('../fonts/iconsPack.eot?lm0d93');
-  src:  url('../fonts/iconsPack.eot?lm0d93#iefix') format('embedded-opentype'),
-    url('../fonts/iconsPack.ttf?lm0d93') format('truetype'),
-    url('../fonts/iconsPack.woff?lm0d93') format('woff'),
-    url('../fonts/iconsPack.svg?lm0d93#iconsPack') format('svg');
+  src:  url('../fonts/iconsPack.eot?40xgks');
+  src:  url('../fonts/iconsPack.eot?40xgks#iefix') format('embedded-opentype'),
+    url('../fonts/iconsPack.ttf?40xgks') format('truetype'),
+    url('../fonts/iconsPack.woff?40xgks') format('woff'),
+    url('../fonts/iconsPack.svg?40xgks#iconsPack') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="_icon-"]::before,
-[class*=" _icon-"]::before {
+[class^="_icon-"], [class*=" _icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'iconsPack' !important;
   speak: never;
@@ -26,6 +25,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+._icon-stick-arrow:before {
+  content: "\e908";
+}
 ._icon-arrow-down:before {
   content: "\e900";
 }

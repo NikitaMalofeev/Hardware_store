@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../css/iconsFont.css">
     <link rel="stylesheet" href="../css/Hardware.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hardware store</title>
 </head>
@@ -96,7 +96,7 @@
             </div>
         </header>
         <main class="main">
-                <section class="page__main-slider main-slider">
+            <section class="page__main-slider main-slider">
                     <div class="main-slider__wrapper">
                     <div class="main-slider__container swiper-container">
                         <div class="main-slider__body">
@@ -110,8 +110,10 @@
                             </div>
                             <div class="main-slider__slider slider-main">
                                 <div class="slider-main__controls controls-slider-main">
-                                    <div class="controls-slider-main__dots">
-
+                                    <div class="controls-slider-main__dots dots">
+                                        <div class="dots__item"></div>
+                                        <div class="dots__item _active"></div>
+                                        <div class="dots__item"></div>
                                     </div>
                                     <div class="control-slider-main__arrows slider-arrows">
                                         <button class="slider-arrow slider-arrow_prev _icon-p-left"></button>
@@ -119,43 +121,89 @@
                                     </div>
                                 
                                 </div>
-                                <div class="slider-main__body">
+                                <div class="slider-main__wrapper">
                                     <div class="slider-main__container swiper-container">
-                                        <div class="slider-main__wrapper swiper-wrapper">
+                                        <div class="slider-main__track swiper-track">
                                             <div class="slider-main__slide swiper-slide">
                                                 <div class="slider-main__image">
-                                                    <img src="../img/main-slider/0.jpg" alt="slide" class="slider-main__item">
+                                                    <img src="../img/main-slider/01.jpg" alt="slide" class="slider-main__item">
                                                 </div>
                                                 <a href="" class="slider-main__content">
                                                     <div class="slider-main__title">Bohauss</div>
                                                     <div class="slider-main__text">Luxury big sofa 2-seat</div>
-                                                    <div class="slider-main__price">Rp 17.000.000 <img src="../img/icons/arrow-link.svg" alt=""></div>
+                                                    <div class="slider-main__price _icon-stick-arrow">Rp 17.000.000</div>
                                                 </a>
                                             </div>
                                             <div class="slider-main__slide swiper-slide">
                                                 <div class="slider-main__image">
-                                                    <img src="../img/main-slider/0.jpg" alt="slide" class="slider-main__item">
+                                                    <img src="../img/main-slider/02.jpg" alt="slide" class="slider-main__item">
                                                 </div>
                                                 <a href="" class="slider-main__content">
                                                     <div class="slider-main__title">Bohauss</div>
                                                     <div class="slider-main__text">Luxury big sofa 2-seat</div>
-                                                    <div class="slider-main__price">Rp 17.000.000 <img src="../img/icons/arrow-link.svg" alt=""></div>
+                                                    <div class="slider-main__price _icon-stick-arrow">Rp 17.000.000</div>
                                                 </a>
                                             </div>
                                             <div class="slider-main__slide swiper-slide">
                                                 <div class="slider-main__image">
-                                                    <img src="../img/main-slider/0.jpg" alt="slide" class="slider-main__item">
+                                                    <img src="../img/main-slider/03.jpg" alt="slide" class="slider-main__item">
                                                 </div>
                                                 <a href="" class="slider-main__content">
                                                     <div class="slider-main__title">Bohauss</div>
                                                     <div class="slider-main__text">Luxury big sofa 2-seat</div>
-                                                    <div class="slider-main__price">Rp 17.000.000 <img src="../img/icons/arrow-link.svg" alt=""></div>
+                                                    <div class="slider-main__price _icon-stick-arrow">Rp 17.000.000</div>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="page__advantages advantages">
+                <div class="advantages__wrapper">
+                    <div class="advantages__container">
+                        <div class="advantages__item">
+                            <div class="advantages__icon">
+                                <img src="../img/advantages/trophy.svg" alt="trophy icon">
+                            </div>
+                            <h4 class="advantages__title">High Quality</h4>
+                            <div class="advantages__text">crafted from top materials</div>
+                        </div>
+                        <div class="advantages__item">
+                            <div class="advantages__icon">
+                                <img src="../img/advantages/guarantee.svg" alt="guarantee icon">
+                            </div>
+                            <h4 class="advantages__title">Warrany Protection</h4>
+                            <div class="advantages__text">Over 2 years</div>
+                        </div>
+                        <div class="advantages__item">
+                            <div class="advantages__icon">
+                                <img src="../img/advantages/shipping.svg" alt="shipping icon">
+                            </div>
+                            <h4 class="advantages__title">Free Shipping</h4>
+                            <div class="advantages__text">Order over 150 $</div>
+                        </div>
+                        <div class="advantages__item">
+                            <div class="advantages__icon">
+                                <img src="../img/advantages/customer-support.svg" alt="support icon">
+                            </div>
+                            <h4 class="advantages__title">24 / 7 Support</h4>
+                            <div class="advantages__text">Dedicated support</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="page__products products">
+                <div class="products__wrapper">
+                    <div class="products__container">
+                        <h2 class="products__title _title"></h2>
+                        <div class="products__items">
+                            <article class="products__item item-product">
+                                
+                            </article>
                         </div>
                     </div>
                 </div>
@@ -223,11 +271,10 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer> 
         <script src="../js/files/functions.js"></script>
         <script src="../js/files/script.js"></script>
-        <script src="../js/files/swiper.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <script src="../js/files/slider.js"></script>
     </div>
 </body>
 </html>

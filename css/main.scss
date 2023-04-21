@@ -1,18 +1,15 @@
 @import "../css/mixins_variable.scss";
 
 .main {
-	background: linear-gradient(90deg, $pink_main 61%, $pink_light 32%);
+	min-height: 100%;
 	
 }
-.page {
 
-		&__main-slider {
-			
-		}
-}
 .main-slider {
+	background: linear-gradient(90deg, $pink_main 61%, $pink_light 32%);
 		&__wrapper {
 			max-width: 100vw;
+			
 		}
 
 		&__container {
@@ -36,6 +33,7 @@
 
 		&__body {
             padding-top: 140px;
+			height: 100%;
             position: relative;
             z-index: 2;
             @media (max-width: $mq2) {
@@ -56,13 +54,14 @@
 		&__slider {
             flex: 1 1 auto;
 			min-width: 0;
+			@include adaptiv-value('padding-left', 32, 15, 1)
 		}
 }
-.swiper-container {
-}
+
 .content-main {
 	position: relative;
 	z-index: 5;
+	max-height: 560px;
 	padding-left: 15px;
 	padding-right: 15px;
 	background: rgba(255, 255, 255, 0.72);
@@ -117,91 +116,280 @@
 }
 
 .slider-main {
+		@media (max-width: $mq3) {
+			display: none;
+		}
 
 		&__controls {
-		}
-
-		&__body {
-		}
-
-		&__container {
+			padding-bottom: 25px;
+			@media (max-width: $mq2) {
+				@include adaptiv-value('padding-top', 30, 15, 1);
+			}
 		}
 
 		&__wrapper {
+			overflow: visible;
+			@media (min-width: $mq2) {
+				@include adaptiv-value('width', 934, 290, 1)
+			}
+		}
+
+		&__container {
+			min-width: 2670px;
+			@media (max-width: $mq2) {
+				transform: translate(120px);
+			}
+		}
+
+		&__track {
+			display: flex;
+			flex-direction: row;
+			position: relative;
+			left: -1065px;
+			transition: all 0.8s ease 0s;
+			
 		}
 
 		&__slide {
+			min-width: 900px;
+			margin: 0 15px;
+			position: relative;
+			left: 0;
+			transition: all 0.8s ease 0s;
 		}
 
 		&__image {
+			display: flex;
+			flex-direction: row;
             text-align: center;
             & img {
                 max-width: 100%;
+				margin: 0 15px;
             }
 		}
 
-		&__item {
-		}
-
 		&__content {
+			min-width: 295px;
+			max-height: 300px;
+			overflow: auto;
+			position: absolute;
+			color: inherit;
+			display: flex;
+			flex-direction: column;
+			@include adaptiv-value('padding', 24, 15, 1);
+			background: rgba(255, 255, 255, 0.9);
+			@media (min-width: $mq3) {
+				position: absolute;
+				min-width: 350px;
+				@include adaptiv-value('right', 40, 0 , 1);
+				@include adaptiv-value('bottom', 40, 0 , 1);
+			}
+			@media (max-width: $mq1) {
+				right: 225px;
+			}
 		}
 
 		&__title {
+			@include adaptiv-value('font-size', 28, 22, 1);
+			font-weight: $gil_600;
+			line-height: 120%;
+			margin: 0 0 4px/28px * 1em 0;
+
 		}
 
 		&__text {
+			line-height: 150%;
+			color: $grey_color;
+			margin: 0 0 8px/16px * 1em 0;
 		}
 
 		&__price {
+			display: flex;
+			flex-direction: row-reverse;
+			line-height: 150%;
+			align-items: center;
+			font-weight: 600;
+			justify-content: start;
+			@include adaptiv-value('font-size', 20, 14, 1);
+			&::before {
+				position: absolute;
+				right: 10%;
+				font-size: 16px;
+				color: black;
+			}
 		}
 }
 .controls-slider-main {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
 
 		&__dots {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			
+			
 		}
 }
-.control-slider-main {
 
-		&__arrows {
+.dots {
+	&__item {
+		cursor: pointer;
+		border-radius: 50%;
+		color: $dark_grey_color;
+		flex: 0 0 27px;
+		height: 27px;
+		position: relative;
+		justify-content: center;
+		align-items: center;
+		transition: all 0.4s ease 0s;
+		margin: 1px 1px;
+		&:not(:last-child) {margin-right: 12px}
+		&::after {
+			display: block;
+			position: absolute;
+			content: '';
+			top: 30%;
+			left: 30%;
+			width: 11px;
+			height: 11px;
+			background-color: #d8d8d8;
+			border-radius: 50%;
+			transition: all 0.4s ease 0s;
 		}
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			border: 1px solid $orange_color;
+			transition: transform 0.4s ease 0s;
+			transform: scale(0);
+		}	
+		&._active {
+			&::after {
+				background-color: $orange_color;
+			}
+			&::before {
+				transform: scale(1);
+			}
+		}
+	}
 }
+
 .slider-arrows {
 	display: grid;
-  	grid-template-columns: repeat(2, 48px);
-  	gap: 8px;
+	grid-template-columns: repeat(2, 48px);
+	gap: 8px;
 }
 .slider-arrow {
 		border-radius: 50%;
 		height: 48px;
-		background-color: rgba(252, 159, 113, 0.3);
+		background-color: rgba(232, 159, 113, 0.3);
 		transition: all 0.4s ease 0s;
+		box-shadow: (0, 0, 0, 0.16);
 
 		&_prev {
 			cursor: pointer;
-			& img {
-				transform: rotate(180deg);
-			}
+			color: $orange_color;
 			@media (any-hover: hover) {
 				&:hover {
-					background-color: rgba(252, 159, 113, 0.3)
+					background-color: rgba(252, 159, 113, 0.3);
 				}
 			}
 			&::before {
-				color: red;
 				font-size: 20px;
+				font-weight: $gil_600;
+				color: $orange_color;
+			}
+			&:disabled {
+				background-color: #fff;
 			}
 		}
 
 		&_next {
 			cursor: pointer;
-
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: rgba(252, 159, 113, 0.3);
+				}
+			}
 			&::before {
-				color: red;
 				font-size: 20px;
+				font-weight: $gil_600;
+				color: $orange_color;
+			}
+			&:disabled {
+				background-color: #fff;
 			}
 		}
 }
-.swiper-wrapper {
+
+/////////////////////////////////////////////////////////////////////////////////////
+.page {
+
+	&__advantages {
+	
+	}
 }
-.swiper-slide {
+.advantages {
+	@include adaptiv-value('padding-top',88, 30, 1);
+	@include adaptiv-value('padding-bottom',88, 30, 1);
+
+	&__wrapper {
+		width: 100vw;
+	}
+
+	&__container {
+		max-width: $maxWidthContainer+px;
+		width: 100%;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		@media (max-width: $mq3) {
+			padding-left: 15px;
+		}
+	}
+
+	&__item {
+		display: inline-grid;
+		padding: 15px 0;
+		grid-template: auto auto / 85px 1fr ;
+		&:nth-last-child(n) {
+			padding-right: 15px;
+		}
+		@media (max-width: $mq2) {
+			min-width: 280px;
+		}
+		@media (max-width: $mq3) {
+			grid-template: auto auto / auto 1fr ;
+		}
+	}
+
+	&__icon {
+		text-align: center;
+		align-self: center;
+		grid-row: span 2;
+		@media (max-width: $mq3) {
+			padding-right: 15px;
+		}
+	}
+
+	&__title {
+		font-weight: $gil_600;
+		font-size: 18px;
+		line-height: 150%;
+		margin-bottom: 2px/18px * 1em;
+	}
+
+	&__text {
+		line-height: 150%;
+		color: $grey_color;
+	}
 }

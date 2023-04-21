@@ -33,6 +33,19 @@ window.addEventListener('load',function() {
 		
 		
 	}
+	
+	//Header scroll
+	const header = document.querySelector('.header');
+
+	const callback = function (entries, observer) {
+		if(entries[0].isIntersecting) {
+			header.classList.remove('_scroll');	
+		} else {header.classList.add('_scroll');}
+	}
+
+	const headerObserved = new IntersectionObserver(callback);
+	headerObserved.observe(header);
+
 });
 
 window.addEventListener('load',function() {
@@ -56,6 +69,16 @@ window.addEventListener('load',function() {
 		}
 	}
 });
+
+window.addEventListener('load',function() {
+	
+	
+});
+
+
+
+
+
 
 
 
